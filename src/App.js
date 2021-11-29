@@ -19,16 +19,18 @@ function App() {
   }, []);
 
   const getAllStudents = () => {
-    axios.get('https://crudapiuvi.herokuapp.com')
+    axios.get('https://crudapiuvi.herokuapp.com/students')
       .then(
         response => {
           console.log(response.data);
           setStudentList(response.data);//This is how you set the data in your state variables
+          console.log("hahaha");
         }
       )//resolve the promise object
       .catch(
         (error) => {
           console.log(error);
+          console.log("erooor");
         }
       )
   }
