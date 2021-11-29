@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const getAllStudents = () => {
-    axios.get('https://crudapiuvi.herokuapp.com/students')
+    axios.get('https://crudapiuvi.herokuapp.com')
       .then(
         response => {
           console.log(response.data);
