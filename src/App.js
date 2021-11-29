@@ -24,13 +24,11 @@ function App() {
         response => {
           console.log(response.data);
           setStudentList(response.data);//This is how you set the data in your state variables
-          console.log("hahaha");
         }
       )//resolve the promise object
       .catch(
         (error) => {
           console.log(error);
-          console.log("erooor");
         }
       )
   }
