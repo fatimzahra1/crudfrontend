@@ -4,7 +4,7 @@ import axios from "axios";
 function Student(props) {
 
     const getAllStudents = () => {
-        axios.get('http://127.0.0.1:8000/students')
+        axios.get('https://crudapiuvi.herokuapp.com/students')
             .then(
                 response => {
                     console.log(response.data);

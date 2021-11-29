@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const getAllStudents = () => {
-    axios.get('http://127.0.0.1:8000/students')
+    axios.get('https://crudapiuvi.herokuapp.com/students')
       .then(
         response => {
           console.log(response.data);
@@ -33,7 +33,7 @@ function App() {
       )
   }
   const addNewStudent = (student) => {
-    axios.post('http://127.0.0.1:8000/students', student)
+    axios.post('https://crudapiuvi.herokuapp.com/students', student)
       .then(response => {
         getAllStudents();
         alert("Student added successfully!");
@@ -41,7 +41,7 @@ function App() {
       .catch((err) => { console.log(err); })
   }
   const updateStudent = (student) => {
-    axios.put(`http://127.0.0.1:8000/students/${studentId}`, student)
+    axios.put(`https://crudapiuvi.herokuapp.com/students/${studentId}`, student)
       .then(response => {
         getAllStudents();
         alert("Student updated successfully!");
