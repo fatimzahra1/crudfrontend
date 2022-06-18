@@ -93,7 +93,7 @@ function App() {
               studentListVar={studentList} />
           </div>
         </div>
-        <h6 className="card text-dark bg-warning py-1">All rights reserved &copy; 2021</h6>
+        <h6 className="card text-dark bg-warning py-1">All rights reserved for fatimzahra &copy; 2021</h6>
       </div>
     </div>
   );
