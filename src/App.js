@@ -33,30 +33,38 @@ function App() {
       )
   }
   const addNewStudent = (student) => {
-    axios.post('https://pacific-hamlet-92618.herokuapp.com/students', student)
+    axios.post('https://pacific-hamlet-92618.herokuapp.com/students',  {name:studentName, email: studentEmail, phone: studentPhone})
       .then(response => {
         console.log(response.data)
-        getAllStudents();
-        alert("Student added successfully!");
+        
+        getAllStudents()
       })
       .catch((err) => { console.log(err); })
   }
   const updateStudent = (student) => {
     axios.put(`https://pacific-hamlet-92618.herokuapp.com/students/${studentId}`, student)
       .then(response => {
-        getAllStudents();
-        alert("Student updated successfully!");
+        
+        getAllStudents()
       })
       .catch((err) => { console.log(err); })
   }
   // Fast API call to add a new student
   const addUpdateStudent = () => {
     const student = { 'name': studentName, 'email': studentEmail, 'phone': studentPhone };
-    if (student._id !== null) {
+    console.log(studentId)
+    if (studentId !== '') {
       updateStudent(student);
+      console.log('in update')
+      setStudentId('')
     } else {
       addNewStudent(student);
+      setStudentId('')
+
+      console.log('in add')
+
     }
+    getAllStudents()
   }
 
   return (

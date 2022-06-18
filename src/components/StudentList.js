@@ -2,7 +2,7 @@ import React from "react";
 import Student from "./Student";
 
 function StudentList(props) {
-    return (
+  if(props.studentListVar.length >0) { return (
         <div>
             <ul>
                 {
@@ -20,6 +20,7 @@ function StudentList(props) {
                 }
             </ul>
         </div>
-    )
+    )}
+    else return null
 }
 export default StudentList;
