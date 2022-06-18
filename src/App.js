@@ -52,7 +52,7 @@ function App() {
   // Fast API call to add a new student
   const addUpdateStudent = () => {
     const student = { 'name': studentName, 'email': studentEmail, 'phone': studentPhone };
-    if (studentId !== '') {
+    if (student._id !== null) {
       updateStudent(student);
     } else {
       addNewStudent(student);
