@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   const getAllStudents = () => {
-    axios.get('https://crudapiuvi.herokuapp.com/students')
+    axios.get('https://pacific-hamlet-92618.herokuapp.com/students')
       .then(
         response => {
           console.log(response.data);
@@ -33,15 +33,16 @@ function App() {
       )
   }
   const addNewStudent = (student) => {
-    axios.post('https://crudapiuvi.herokuapp.com/students', student)
+    axios.post('https://pacific-hamlet-92618.herokuapp.com/students', student)
       .then(response => {
+        console.log(response.data)
         getAllStudents();
         alert("Student added successfully!");
       })
       .catch((err) => { console.log(err); })
   }
   const updateStudent = (student) => {
-    axios.put(`https://crudapiuvi.herokuapp.com/students/${studentId}`, student)
+    axios.put(`https://pacific-hamlet-92618.herokuapp.com/students/${studentId}`, student)
       .then(response => {
         getAllStudents();
         alert("Student updated successfully!");
